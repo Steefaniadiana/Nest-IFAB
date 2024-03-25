@@ -62,7 +62,6 @@ export const imageGenerationUseCase = async(openai: OpenAI, options: Options ) =
         revised_prompt: response.data[0].revised_prompt,
     }
 
-    //console.group({ prompt, originalImage, maskImage});
 
     
 }

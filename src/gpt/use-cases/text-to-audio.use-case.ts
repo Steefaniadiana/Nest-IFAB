@@ -36,10 +36,7 @@ const buffer = Buffer.from(await mp3.arrayBuffer());
 
 fs.writeFileSync(speechFile, buffer); 
 
-// return {
-//     prompt: prompt,
-//     selectedVoice: selectedVoice
-// }
+
 return speechFile;
 
 }

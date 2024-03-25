@@ -12,7 +12,7 @@ export const prosConsDiscusserUseCase = async( openai: OpenAI, {prompt}: Options
                 content: `
                 Te harán una pregunta y tu tarea es dar una respuesta con pros y contras.
             La respuesta debe ser en formato markdown.
-        Los pros y contras deben estar en una lista.
+            Los pros y contras deben estar en una lista.
                 `
             },
             {

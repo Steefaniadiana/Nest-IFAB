@@ -7,7 +7,7 @@ export const downloadImageAsPng =  async ( url: string, fullPath: boolean = fals
     const response = await fetch( url );
 
     if ( !response.ok ) {
-    throw new InternalServerErrorException('Que no se descarga churri :(') 
+    throw new InternalServerErrorException('La imagen no se puede descargar') 
     }
 
 const folderPath = path.resolve('./', './generated/images');
@@ -33,7 +33,6 @@ return fullPath ? completePath: imageNamePng;
 
 export const downloadBase64ImageAsPng = async (base64Image: string, fullPath: boolean = false) => {
 
-    // Remover encabezado
     base64Image = base64Image.split(';base64,').pop();
     const imageBuffer = Buffer.from(base64Image, 'base64');
   
@@ -44,7 +43,6 @@ export const downloadBase64ImageAsPng = async (base64Image: string, fullPath: bo
     
     const completePath = path.join(folderPath, imageNamePng);
   
-    // Transformar a RGBA, png // Así lo espera OpenAI
     await sharp(imageBuffer)
       .png()
       .ensureAlpha()
